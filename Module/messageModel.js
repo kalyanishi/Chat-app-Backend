@@ -15,5 +15,5 @@ const messageModel = new mongoose.schema({
         type :String,
         required:true
     }
-});
-export const Message = mongoose,model("Message", messageModel);
+},{timestamps:true});
+export const Message = mongoose.model("Message", messageModel);
