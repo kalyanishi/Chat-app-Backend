@@ -1,3 +1,6 @@
+import {user} from "../models/userModel";
+import bcrypt from "bcryptjs"
+
 export const register = async(req, res) => {
     try {
         const{fullName, username, password, confirmpassword, gender} = req.body;
@@ -11,9 +14,13 @@ export const register = async(req, res) => {
         if(user){
             return res.status(400).json({message:"username already exit try different way"})
         }
+        const hashedPassword = await bcrypt.hash(password,10);
+        // Profile photo
+        // const 
+
         await user.create({fullName,
             username,
-            password,
+            password :hashedPassword,
             profilephoto,
             gender
         })
