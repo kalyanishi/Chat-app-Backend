@@ -9,6 +9,17 @@ dotenv.config({});
 const app = express();
 
 const PORT = process.env.PORT || 7000;
+// app.post("/login", (req,res) =>{
+
+// })
+
+// app.post("/register", (req,res) =>{
+    
+// })
+
+// app.post("/createModel", (req,res) =>{
+    
+// })
 
 app.listen(PORT, () => {
     connectDB();
